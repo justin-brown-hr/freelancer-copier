@@ -1,0 +1,121 @@
+/* Freelancer Project Copier — injected UI
+   Namespaced with .flcopy- and forced with !important so Freelancer's own
+   stylesheets can't reshape it. Colours are inherited from the surrounding
+   text, so the button reads correctly on both the dark and light themes. */
+
+.flcopy-btn {
+  all: unset;
+  box-sizing: border-box !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  vertical-align: middle !important;
+  cursor: pointer !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif !important;
+  font-size: 12px !important;
+  line-height: 1 !important;
+  font-weight: 600 !important;
+  border-radius: 6px !important;
+  transition: background-color 120ms ease, opacity 120ms ease, color 120ms ease !important;
+}
+
+.flcopy-btn:focus-visible {
+  outline: 2px solid #29b2fe !important;
+  outline-offset: 2px !important;
+}
+
+.flcopy-btn__label:empty {
+  display: none !important;
+}
+
+/* Next to a project title, and in the project page's icon row. */
+.flcopy-btn--title,
+.flcopy-btn--toolbar {
+  color: currentColor !important;
+  background: transparent !important;
+  border: 0 !important;
+  padding: 5px !important;
+  margin-left: 8px !important;
+  opacity: 0.6 !important;
+}
+
+.flcopy-btn--title:hover,
+.flcopy-btn--toolbar:hover {
+  opacity: 1 !important;
+  background: rgba(128, 150, 170, 0.22) !important;
+  color: #29b2fe !important;
+}
+
+.flcopy-btn--toolbar {
+  margin: 0 6px 0 0 !important;
+}
+
+.flcopy-btn--title.flcopy-btn--done,
+.flcopy-btn--toolbar.flcopy-btn--done {
+  opacity: 1 !important;
+  color: #35c37d !important;
+  background: rgba(53, 195, 125, 0.16) !important;
+}
+
+/* Always-reachable button on the project page, bottom right. */
+.flcopy-btn--floating {
+  position: fixed !important;
+  right: 20px !important;
+  bottom: 20px !important;
+  padding: 10px 14px !important;
+  font-size: 13px !important;
+  background: #1197d4 !important;
+  color: #ffffff !important;
+  border: 1px solid #0d7cae !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35) !important;
+  z-index: 2147483000 !important;
+}
+
+.flcopy-btn--floating:hover {
+  background: #0d7cae !important;
+  color: #ffffff !important;
+}
+
+.flcopy-btn--floating.flcopy-btn--done {
+  background: #2fa360 !important;
+  border-color: #2fa360 !important;
+  color: #ffffff !important;
+}
+
+/* Confirmation message. */
+.flcopy-toast {
+  position: fixed !important;
+  left: 50% !important;
+  bottom: 28px !important;
+  transform: translate(-50%, 12px) !important;
+  background: #12304a !important;
+  color: #ffffff !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif !important;
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+  padding: 10px 16px !important;
+  border-radius: 8px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+  opacity: 0 !important;
+  transition: opacity 180ms ease, transform 180ms ease !important;
+  pointer-events: none !important;
+  max-width: 320px !important;
+  z-index: 2147483001 !important;
+}
+
+.flcopy-toast--in {
+  opacity: 1 !important;
+  transform: translate(-50%, 0) !important;
+}
+
+.flcopy-toast--error {
+  background: #8a2b2b !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flcopy-btn,
+  .flcopy-toast {
+    transition: none !important;
+  }
+}
